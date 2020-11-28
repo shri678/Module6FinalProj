@@ -41,17 +41,17 @@ app.layout = html.Div([
 )
 
 
-def multi_output(stat):
+def multi_output(IPLStat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
-    fig1 = px.pie(df3, values= stat, names='teams', title='IPL pie chart')
-    fig2 = px.bar(df3, x=df3.index, y=stat)
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title='IPL pie chart')
+    fig2 = px.bar(df3, x=df3.index, y=IPLStat)
     
   
     
     fig2.update_layout(
     legend_title_text='Teams',
-    yaxis_title=stat,
+    yaxis_title=IPLStat,
     )
 
 
