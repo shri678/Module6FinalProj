@@ -6,7 +6,9 @@ from dash.dependencies import Input, Output
 import pandas as pd
 
 url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(1).csv'
-df3 = pd.read_csv(url1, index = 'teams')
+df3 = pd.read_csv(url1)
+
+df3 = df3.set_index('teams')
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
