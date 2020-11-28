@@ -30,37 +30,37 @@ app.layout = html.Div([
         dcc.Graph(id='graph'),
     ],style={'display': 'inline-block', 'width': '45%'}),
         
-       # html.Div([
-     #   dcc.Graph(id='graph_2'),
- #   ],style={'display': 'inline-block', 'width': '55%'})
-#])
+        html.Div([
+       dcc.Graph(id='graph_2'),
+    ],style={'display': 'inline-block', 'width': '55%'})
+])
 
 
 @app.callback(
-    [dash.dependencies.Output('graph', 'figure')]#,#dash.dependencies.Output('graph_2', 'figure')],
+    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure')],
     [dash.dependencies.Input("teams", "value")]
 )
+
 
 def multi_output(teams):
 
     fig1 = px.line(df3, x=df3.index, y=teams)
-   # fig2 = px.area(df3, x=df3.index, y=region)
+    fig2 = px.area(df3, x=df3.index, y=teams)
     
     fig1.update_layout(
     yaxis_title='IPL',
     showlegend = False
     )
     
-  #  fig2.update_layout(
-  #  legend_title_text='teams',
-  #  yaxis_title='IPL',
- #   )
+    fig2.update_layout(
+    legend_title_text='teams',
+    yaxis_title='IPL',
+    )
 
     fig1.update_xaxes(showspikes=True)
     fig1.update_yaxes(showspikes=True)
 
-    return fig1
-    #, fig2
+    return fig1, fig2
 
 if __name__ == '__main__':
     app.run_server()
