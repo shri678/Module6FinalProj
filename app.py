@@ -18,11 +18,11 @@ app.layout = html.Div([
     html.H3("IPL Team level Statistics"),
         html.Div([
         dcc.Dropdown(
-            id='teams', clearable=False,
+            id='IPLStat', clearable=False,
             value='toss_Matchwins', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
-            ], multi = True),
+            ], multi = False),
     ],style={'display': 'inline', 'width': '15%'}),
         
         html.Div([
@@ -37,28 +37,23 @@ app.layout = html.Div([
 
 @app.callback(
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure')],
-    [dash.dependencies.Input("teams", "value")]
+    [dash.dependencies.Input("IPLStat", "value")]
 )
 
 
-def multi_output(teams):
+def multi_output(stat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
-    fig1 = px.pie(df3, values= df3.index, names='teams', title='IPL pie chart')
-    fig2 = px.bar(df3, x=df3.index, y=teams)
+    fig1 = px.pie(df3, values= stat, names='teams', title='IPL pie chart')
+    fig2 = px.bar(df3, x=df3.index, y=stat)
     
-    fig1.update_layout(
-    yaxis_title= df3.column,
-    showlegend = False
-    )
+  
     
     fig2.update_layout(
-    legend_title_text='teams',
-    yaxis_title='IPL',
+    legend_title_text='Teams',
+    yaxis_title=stat,
     )
 
-    fig1.update_xaxes(showspikes=True)
-    fig1.update_yaxes(showspikes=True)
 
     return fig1, fig2
 
