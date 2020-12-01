@@ -42,7 +42,7 @@ app.layout = html.Div([
 
 
 @app.callback(
-    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'), dash.dependencies.Output('graph_3', 'figure') ],
+    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),dash.dependencies.Output('graph_3', 'figure')],
     [dash.dependencies.Input("IPLStat", "value")]
 )
 
@@ -57,7 +57,7 @@ def multi_output(IPLStat):
     max_y = df3['Win by Runs'].max()
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
-                color = 'teams', hover_name = 'teams', size_max = 60,
+                color = df3.index, hover_name = df3.index, size_max = 60,
                  range_x = [0,max_x], range_y = [0,max_y])
   
     
