@@ -53,8 +53,8 @@ def multi_output(IPLStat):
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title='IPL pie chart')
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
 
-    max_x = df_total['Win by Wickets'].max()
-    max_y = df_total['Win by Runs'].max()
+    max_x = df3['Win by Wickets'].max()
+    max_y = df3['Win by Runs'].max()
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
                 color = 'teams', hover_name = 'teams', size_max = 60,
