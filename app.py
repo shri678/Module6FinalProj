@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd
 
-url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(1).csv'
+url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(3).csv'
 df3 = pd.read_csv(url1)
 
 df3 = df3.set_index('teams')
@@ -34,21 +34,28 @@ app.layout = html.Div([
         html.Div([
        dcc.Graph(id='graph_2'),
     ],style={'display': 'inline-block', 'width': '55%'})
+        
+        html.Div([
+       dcc.Graph(id='graph_3'),
+    ],style={'display': 'inline-block', 'width': '55%'})
 ])
 
 
 @app.callback(
-    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure')],
+    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'), dash.dependencies.Output('graph_3', 'figure') ],
     [dash.dependencies.Input("IPLStat", "value")]
 )
-max_x = df_total['Win by Wickets'].max()
-max_y = df_total['Win by Runs'].max()
+
 
 def multi_output(IPLStat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title='IPL pie chart')
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
+
+    max_x = df_total['Win by Wickets'].max()
+    max_y = df_total['Win by Runs'].max()
+
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
                 color = 'teams', hover_name = 'teams', size_max = 60,
                  range_x = [0,max_x], range_y = [0,max_y])
