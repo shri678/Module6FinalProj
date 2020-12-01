@@ -41,14 +41,17 @@ app.layout = html.Div([
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure')],
     [dash.dependencies.Input("IPLStat", "value")]
 )
-
+max_x = df_total['Win by Wickets'].max()
+max_y = df_total['Win by Runs'].max()
 
 def multi_output(IPLStat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title='IPL pie chart')
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
-    
+    fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
+                color = 'teams', hover_name = 'teams', size_max = 60,
+                 range_x = [0,max_x], range_y = [0,max_y])
   
     
     fig2.update_layout(
@@ -57,7 +60,7 @@ def multi_output(IPLStat):
     )
 
 
-    return fig1, fig2
+    return fig1, fig2, fig3
 
 if __name__ == '__main__':
     app.run_server()
