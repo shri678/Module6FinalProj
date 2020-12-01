@@ -29,15 +29,15 @@ app.layout = html.Div([
         
         html.Div([
         dcc.Graph(id='graph'),
-    ],style={'display': 'inline-block', 'width': '45%'}),
+    ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
        dcc.Graph(id='graph_3'),
-    ],style={'display': 'inline-block', 'width': '55%'}),
+    ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
        dcc.Graph(id='graph_2'),
-    ],style={'display': 'inline-block', 'width': '55%'})
+    ],style={'display': 'inline-block', 'width': '50%'})
 ])
 
 
