@@ -65,21 +65,23 @@ app.layout = html.Div([
 def multi_output(IPLStat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
-    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
-    fig2 = px.bar(df3, x=df3.index, y=IPLStat)
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, legend_title_text = "IPL Teams")
+    fig1.update_layout(title_x = .5)
 
+
+    fig2 = px.bar(df3, x=df3.index, y=IPLStat)
+    fig2.update_layout(title = IPLStat + " for every IPL team",title_x = .5, legend_title_text='IPL Teams', yaxis_title=IPLStat)
+    
     max_x = df3['Win by Wickets'].max()
     max_y = df3['Win by Runs'].max()
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
-                color = df3.index, hover_name = df3.index, size_max = 60,
-                 range_x = [0,max_x], range_y = [0,max_y])
-    fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
+                color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams'
+                 range_x = [0,max_x], range_y = [0,max_y], legend_title_text = "IPL Teams")
     
-    fig2.update_layout(
-    legend_title_text='Teams',
-    yaxis_title=IPLStat,
-    )
+
+    fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
+    fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
 
 
     return fig1, fig2, fig3, fig4
