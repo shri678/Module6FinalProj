@@ -6,7 +6,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd
 
-url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(3).csv'
+url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(5).csv'
 df3 = pd.read_csv(url1)
 
 urlbowler = 'https://raw.githubusercontent.com/shri678/DataViz1/master/ODI_rankings%20-%20Bowlers.csv'
