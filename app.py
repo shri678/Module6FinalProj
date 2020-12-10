@@ -1,3 +1,4 @@
+from jupyter_dash import JupyterDash
 import plotly.express as px
 import dash
 import dash_core_components as dcc
@@ -8,12 +9,21 @@ import pandas as pd
 url1 = 'https://raw.githubusercontent.com/shri678/DataViz1/master/Module6IPL%20(3).csv'
 df3 = pd.read_csv(url1)
 
+urlbowler = 'https://raw.githubusercontent.com/shri678/DataViz1/master/ODI_rankings%20-%20Bowlers.csv'
+urlbatsman = 'https://raw.githubusercontent.com/shri678/DataViz1/master/ODI_rankings%20-%20Batsman.csv'
+df_bowler = pd.read_csv(urlbowler)
+df_batsman = pd.read_csv(urlbatsman)
+
+batscount = df_batsman.TEAM.value_counts().reset_index().rename(columns = {'index': 'Country', 'TEAM': 'Number of players in top 100'})
+
+
 df3 = df3.set_index('teams')
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
 server = app.server
 
 app.layout = html.Div([
@@ -59,7 +69,7 @@ def multi_output(IPLStat):
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
                 color = df3.index, hover_name = df3.index, size_max = 60,
                  range_x = [0,max_x], range_y = [0,max_y])
-  
+    fig4 = = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     
     fig2.update_layout(
     legend_title_text='Teams',
@@ -67,7 +77,7 @@ def multi_output(IPLStat):
     )
 
 
-    return fig1, fig2, fig3
+    return fig1, fig2, fig3, fig4
 
 if __name__ == '__main__':
     app.run_server()
