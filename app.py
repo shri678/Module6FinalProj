@@ -65,7 +65,7 @@ app.layout = html.Div([
 def multi_output(IPLStat):
 
     #fig1 = px.pie(df3, x=df3.index, y=teams)
-    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title='IPL pie chart')
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
 
     max_x = df3['Win by Wickets'].max()
