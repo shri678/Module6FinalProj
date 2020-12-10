@@ -64,7 +64,7 @@ app.layout = html.Div([
 
 def multi_output(IPLStat):
 
-    #fig1 = px.pie(df3, x=df3.index, y=teams)
+  
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, legend_title_text = "IPL Teams")
     fig1.update_layout(title_x = .5)
 
@@ -76,7 +76,7 @@ def multi_output(IPLStat):
     max_y = df3['Win by Runs'].max()
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
-                color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams'
+                color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
                  range_x = [0,max_x], range_y = [0,max_y], legend_title_text = "IPL Teams")
     
 
