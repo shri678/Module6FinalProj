@@ -1,4 +1,4 @@
-from jupyter_dash import JupyterDash
+
 import plotly.express as px
 import dash
 import dash_core_components as dcc
@@ -57,6 +57,7 @@ app.layout = html.Div([
 
 @app.callback(
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure')],
+
     [dash.dependencies.Input("IPLStat", "value")]
 )
 
@@ -73,7 +74,7 @@ def multi_output(IPLStat):
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
                 color = df3.index, hover_name = df3.index, size_max = 60,
                  range_x = [0,max_x], range_y = [0,max_y])
-    fig4  = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
+    fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     
     fig2.update_layout(
     legend_title_text='Teams',
