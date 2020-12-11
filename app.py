@@ -31,7 +31,7 @@ app.layout = html.Div([
     html.Details([
         html.Summary('Indian Premier League'),
         html.P('IPL is a tournament played in India every year. '),
-    ],
+    ]),
     
         html.Div([
         dcc.Dropdown(
