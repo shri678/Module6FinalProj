@@ -89,8 +89,8 @@ def multi_output(IPLStat):
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
     fig2.update_layout(title = IPLStat + " for every IPL team",title_x = .5, legend_title_text='IPL Teams', yaxis_title=IPLStat)
     
-    max_x = df3['Win by Wickets'].max()
-    max_y = df3['Win by Runs'].max()
+    max_x = df3['Win by Wickets'].max() + 10
+    max_y = df3['Win by Runs'].max() + 10
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'Matches won',
                 color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
