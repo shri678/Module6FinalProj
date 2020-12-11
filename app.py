@@ -81,8 +81,7 @@ def multi_output(IPLStat):
 
   
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
-    fig1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
-           fancybox=True, shadow=True, ncol=5)
+  
 
     fig1.update_layout(title_x = .5)
 
