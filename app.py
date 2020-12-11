@@ -94,7 +94,7 @@ def multi_output(IPLStat):
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'match_wins',
                 color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
-                 range_x = [0,max_x], range_y = [0,max_y], legend_title_text = "IPL Teams")
+                 range_x = [0,max_x], range_y = [0,max_y])
     
 
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
