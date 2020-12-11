@@ -28,7 +28,11 @@ server = app.server
 
 app.layout = html.Div([
     html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
-    html.Details("IPL Team level Statistics",children="dasdasdadasa"),
+    html.Details([
+        html.Summary('Indian Premier League'),
+        html.P('IPL is a tournament played in India every year. ')
+    ],
+    
         html.Div([
         dcc.Dropdown(
             id='IPLStat', clearable=False,
@@ -88,7 +92,7 @@ def multi_output(IPLStat):
                  range_x = [0,max_x], range_y = [0,max_y])
     
     fig3.update_layout(
-        legend=dict(orientation="h",yanchor="bottom",y=-0.5,xanchor="left",x=0)
+        legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0)
     )
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
