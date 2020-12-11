@@ -30,7 +30,7 @@ app.layout = html.Div([
     html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
     html.Details([
         html.Summary('Indian Premier League'),
-        html.P('IPL is a tournament played in India every year. ')
+        html.P('IPL is a tournament played in India every year. '),
     ],
     
         html.Div([
