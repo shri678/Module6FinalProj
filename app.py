@@ -39,6 +39,21 @@ app.layout = html.Div([
         
         html.Div([
         dcc.Graph(id='graph'),
+        html.P("Legend position"),
+        dcc.RadioItems(
+          id='xanchor',
+          options=[{'label': 'left', 'value': 0}, 
+                 {'label': 'right', 'value': 1}],
+          value=0,
+          labelStyle={'display': 'inline-block'}
+        ),
+        dcc.RadioItems(
+          id='yanchor', 
+          options=[{'label': 'top', 'value': 1}, 
+                 {'label': 'bottom', 'value': 0}],
+          value=1,
+          labelStyle={'display': 'inline-block'}
+        ),
     ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
