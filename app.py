@@ -28,7 +28,7 @@ server = app.server
 
 app.layout = html.Div([
     html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
-    html.Details(key="IPL Team level Statistics",title="IPL Team level Statistics",children="dasdasdadasa"),
+    html.Details("IPL Team level Statistics",children="dasdasdadasa"),
         html.Div([
         dcc.Dropdown(
             id='IPLStat', clearable=False,
