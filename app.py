@@ -27,6 +27,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
+    html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
     html.H3("IPL Team level Statistics"),
         html.Div([
         dcc.Dropdown(
@@ -48,7 +49,11 @@ app.layout = html.Div([
         
         html.Div([
        dcc.Graph(id='graph_2'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
+    ],style={'display': 'inline-block', 'width': '100%'}),
+        
+        
+        html.H3("One Day International Statistics"),
+        
         
         html.Div([
        dcc.Graph(id='graph_4'),
