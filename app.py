@@ -77,7 +77,7 @@ app.layout = html.Div([
 )
 
 
-def multi_output(IPLStat):
+def multi_output(IPLStat,pos_x,pos_y):
 
   
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
