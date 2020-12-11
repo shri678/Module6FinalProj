@@ -28,7 +28,7 @@ server = app.server
 
 app.layout = html.Div([
     html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
-    html.H3("IPL Team level Statistics"),
+    html.Details(title="IPL Team level Statistics",children="dasdasdadasa"),
         html.Div([
         dcc.Dropdown(
             id='IPLStat', clearable=False,
@@ -36,7 +36,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-    ],style={'display': 'inline', 'width': '15%'}),
+    ],style={'display': 'inline', 'width': '5%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
@@ -49,7 +49,7 @@ app.layout = html.Div([
         
         html.Div([
        dcc.Graph(id='graph_2'),
-    ],style={'display': 'inline-block', 'width': '100%'}),
+    ],style={'display': 'inline-block', 'width': '50%'}),
         
         
         html.H3("One Day International Statistics"),
@@ -78,24 +78,17 @@ def multi_output(IPLStat):
 
 
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
-    fig2.update_layout(title = IPLStat + " for every IPL team",title_x = .5, legend_title_text='IPL Teams', yaxis_title=IPLStat, 
-                       legend=dict(
-                                 orientation="h",
-                                  yanchor="bottom",
-                                  y=1.02,
-                                  xanchor="right",
-                                  x=1
-))
+    fig2.update_layout(title = IPLStat + " by every IPL team",title_x = .5, legend_title_text='IPL Teams', yaxis_title=IPLStat)
     
-    max_x = df3['Win by Wickets'].max()+10
-    max_y = df3['Win by Runs'].max()+10
+    max_x = df3['Win by Wickets'].max()+20
+    max_y = df3['Win by Runs'].max()-20
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'Matches won',
                 color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
                  range_x = [0,max_x], range_y = [0,max_y])
     
     fig3.update_layout(
-        legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1)
+        legend=dict(orientation="h",yanchor="bottom",y=-0.5,xanchor="left",x=0)
     )
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
