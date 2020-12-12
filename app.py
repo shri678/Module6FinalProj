@@ -29,7 +29,7 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-              html.image("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
+              html.Img("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
     ],style={'background-color':'lightblue', 'text-align':'center', 'color' : 'darkorange'}),
     
