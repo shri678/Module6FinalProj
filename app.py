@@ -125,9 +125,7 @@ def multi_output(IPLStat):
     df_bowlers_top20.replace({'RATING': 'Current Rating'}, inplace=True)
 
     fig5 = px.line(df_bowlers_top20, x="Name", y="Rating value", title='Points of Bowlers in top 20', color = 'Rating type')
-    fig5.update_layout(
-        y_axis = 'Rating'
-    )
+    
 
 
     return fig1, fig2, fig3, fig4, fig5
