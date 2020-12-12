@@ -38,7 +38,7 @@ app.layout = html.Div([
     html.Details([
         html.Summary('Background'),
         html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
-    ],style={'display': 'inline-block', 'width': '50%', 'background-color':'grey'}),
+    ],style={'display': 'inline-block', 'width': '50%', 'background-color':'grey', 'color': 'white'}),
     
         html.Div([
         dcc.Dropdown(
