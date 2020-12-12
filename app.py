@@ -54,12 +54,12 @@ app.layout = html.Div([
     ],style={'display': 'inline-block', 'width': '50%', 'bgcolor': 'gray'}),
         
         html.Div([
-       dcc.Graph(id='graph_3'),
+       dcc.Graph(id='graph_2'),
         
     ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
-       dcc.Graph(id='graph_2'),
+       dcc.Graph(id='graph_3'),
     ],style={'display': 'inline-block', 'width': '50%'}),
         
         
@@ -74,7 +74,7 @@ app.layout = html.Div([
         html.Div([
        dcc.Graph(id='graph_4'),
     ],style={'display': 'inline-block', 'width': '50%'})
-])
+], style={'background-color':'lightblue','color' : 'darkorange'})
 
 
 @app.callback(
@@ -89,7 +89,7 @@ def multi_output(IPLStat):
   
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.1)
 
-    fig1.update_traces(textinfo='percent+label')
+    #fig1.update_traces(textinfo='percent+label')
     fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
 
 
