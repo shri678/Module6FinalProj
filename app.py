@@ -23,7 +23,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 css_stylesheets = ['https://www.w3schools.com/w3css/4/w3.css']
 
 
-app = dash.Dash(__name__, external_stylesheets=css_stylesheets)
+app = dash.Dash(__name__)
 
 server = app.server
 
