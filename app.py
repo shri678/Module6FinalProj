@@ -115,9 +115,19 @@ def multi_output(IPLStat):
     fig3.update_layout(title_x = .5)
   
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
-    fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
+    fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5, y_axis = 'Number of batsman in top 100')
 
-    fig5 = px.line(df_bowler, x=df_bowler['Name'], y=df_bowler['RATING'], title='Comparing the ratings of the top 100 bowlers')
+
+
+    df_bowler_top20 = df_bowler.query('Pos < 21')
+    df_bowler_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'Pos'], inplace=True, axis= 1)
+    df_bowlers_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
+    df_bowlers_top20.replace({'RATING': 'Current Rating'}, inplace=True)
+
+    fig5 = px.line(df_bowlers_top20, x="Name", y="Rating value", title='Points of Bowlers in top 20', color = 'Rating type')
+    fig5.update_layout(
+        y_axis = 'Rating'
+    )
 
 
     return fig1, fig2, fig3, fig4, fig5
