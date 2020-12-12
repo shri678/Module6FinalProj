@@ -30,7 +30,7 @@ app.layout = html.Div([
     html.H1("Statistics of cricket matches played in Indian Premier League and One Day Internationals"),
     html.Details([
         html.Summary('Indian Premier League'),
-        html.P('IPL is a tournament played in India every year. '),
+        html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
     ]),
     
         html.Div([
@@ -58,6 +58,10 @@ app.layout = html.Div([
         
         html.H3("One Day International Statistics"),
         
+        html.Details([
+        html.Summary('One Day International (ODI)'),
+        html.P('ODI is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50, with the game lasting up to 8 hours.'),
+    ]),
         
         html.Div([
        dcc.Graph(id='graph_4'),
