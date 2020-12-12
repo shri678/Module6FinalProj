@@ -31,7 +31,7 @@ app.layout = html.Div([
     html.Div([
               html.Img("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
-    ],style={'background-color':'SteelBlue', 'text-align':'center', 'color' : 'Gold'}),
+    ],style={'background-color':'WhiteSmoke', 'text-align':'center', 'color' : 'Gold'}),
     
 
     html.H3('Indian Premier League Statistics'),
