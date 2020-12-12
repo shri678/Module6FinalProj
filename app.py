@@ -73,23 +73,12 @@ app.layout = html.Div([
         
         html.Div([
        dcc.Graph(id='graph_4'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
-        
-        html.Div([
-          dcc.Graph(id='graph_5'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
-], style={'background-color':'SteelBlue','color' : 'Gold'}
-
-
-)
+    ],style={'display': 'inline-block', 'width': '50%'})
+], style={'background-color':'SteelBlue','color' : 'Gold'})
 
 
 @app.callback(
-    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),
-     dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure'),
-     dash.dependencies.Output('graph_5', 'figure')
-     ],
-     
+    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure')],
 
     [dash.dependencies.Input("IPLStat", "value")]
 )
@@ -119,15 +108,8 @@ def multi_output(IPLStat):
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
 
-    fig5 = px.sunburst(
-        df_bowler
-        names=df_bowler['Name'],
-        parents='Present time',
-        values=df_bowler['Rating'],
-        title = "Total Points of the Bowlers in the Present time"
 
-)
-    return fig1, fig2, fig3, fig4, fig5
+    return fig1, fig2, fig3, fig4
 
 if __name__ == '__main__':
     app.run_server()
