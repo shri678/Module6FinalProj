@@ -29,8 +29,9 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
+              html.image("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
-    ],style={'background-color':'grey', 'text-align':'center'}),
+    ],style={'background-color':'lightblue', 'text-align':'center', 'color' : 'darkorange'}),
     
 
     html.H3('Indian Premier League Statistics'),
@@ -88,7 +89,7 @@ def multi_output(IPLStat):
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
 
 
-    fig1.update_layout(title_x = .5)
+    fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
 
 
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
@@ -101,9 +102,7 @@ def multi_output(IPLStat):
                 color = df3.index, hover_name = df3.index, size_max = 120, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
                  range_x = [0,max_x], range_y = [0,max_y])
     
-    fig3.update_layout(
-        legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0)
-    )
+  
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
 
