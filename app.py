@@ -20,9 +20,10 @@ batscount = df_batsman.TEAM.value_counts().reset_index().rename(columns = {'inde
 df3 = df3.set_index('teams')
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+css_stylesheets = ['https://www.w3schools.com/w3css/4/w3.css']
 
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets=css_stylesheets)
 
 server = app.server
 
