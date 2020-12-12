@@ -121,7 +121,7 @@ def multi_output(IPLStat):
 
     fig5 = px.sunburst(
         df_bowler
-        names='Name',
+        names=df_bowler['Name'],
         parents='Present time',
         values=df_bowler['Rating'],
         title = "Total Points of the Bowlers in the Present time"
