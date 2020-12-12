@@ -90,11 +90,12 @@ def multi_output(IPLStat):
     fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.1)
 
     #fig1.update_traces(textinfo='percent+label')
-    fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
+    #fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
+    fig1.update_layout(title_x = .5, plot_bgcolor = 'coral')
 
 
     fig2 = px.bar(df3, x=df3.index, y=IPLStat)
-    fig2.update_layout(title = IPLStat + " by every IPL team",title_x = .5, legend_title_text='IPL Teams', yaxis_title=IPLStat)
+    fig2.update_layout(title = IPLStat + " by every IPL team",title_x = .5, xaxis_title ='IPL Teams', yaxis_title=IPLStat)
     
     max_x = df3['Win by Wickets'].max()+20
     max_y = df3['Win by Runs'].max()-20
