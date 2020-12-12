@@ -74,11 +74,12 @@ app.layout = html.Div([
         html.Div([
        dcc.Graph(id='graph_4'),
     ],style={'display': 'inline-block', 'width': '50%'})
-], style={'background-color':'SteelBlue','color' : 'Gold'}
-
+        
         html.Div([
           dcc.Graph(id='graph_5'),
     ],style={'display': 'inline-block', 'width': '50%'}),
+], style={'background-color':'SteelBlue','color' : 'Gold'}
+
 
 )
 
