@@ -73,12 +73,21 @@ app.layout = html.Div([
         
         html.Div([
        dcc.Graph(id='graph_4'),
-    ],style={'display': 'inline-block', 'width': '50%'})
+    ],style={'display': 'inline-block', 'width': '50%'}),
+        
+        html.Div([
+       dcc.Graph(id='graph_5'),
+    ],style={'display': 'inline-block', 'width': '50%'}),
+
 ], style={'background-color':'SteelBlue','color' : 'Gold'})
 
 
 @app.callback(
-    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure')],
+    [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),
+     dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure'),
+     dash.dependencies.Output('graph_5', 'figure')
+     
+     ],
 
     [dash.dependencies.Input("IPLStat", "value")]
 )
@@ -108,8 +117,15 @@ def multi_output(IPLStat):
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
 
+    fig5 = px.line(data_US, x=df_bowler['Name'], y=df_bowler['RATING'], title='Comparing the ratings of the top 100 bowlers')
+    
+    fig5.update_layout(
+        title_x = .5
 
-    return fig1, fig2, fig3, fig4
+)
+
+
+    return fig1, fig2, fig3, fig4, fig5
 
 if __name__ == '__main__':
     app.run_server()
