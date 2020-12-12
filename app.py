@@ -87,9 +87,9 @@ app.layout = html.Div([
 def multi_output(IPLStat):
 
   
-    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.3)
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.1)
 
-    fig1.update_traces(textposition='inside', textinfo='percent+label')
+    fig1.update_traces(textinfo='percent+label')
     fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
 
 
@@ -100,9 +100,9 @@ def multi_output(IPLStat):
     max_y = df3['Win by Runs'].max()-20
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'Matches won',
-                color = df3.index, hover_name = df3.index, size_max = 120, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
+                color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
                  range_x = [0,max_x], range_y = [0,max_y])
-    
+    fig3.update_layout(title_x = .5)
   
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
     fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5)
