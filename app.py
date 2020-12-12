@@ -39,7 +39,7 @@ app.layout = html.Div([
         html.Summary('Background'),
         html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
-    
+        html.P("Select Metric for graph"),
         html.Div([
         dcc.Dropdown(
             id='IPLStat', clearable=False,
@@ -87,9 +87,9 @@ app.layout = html.Div([
 def multi_output(IPLStat):
 
   
-    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat)
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.3)
 
-
+    fig1.update_traces(textposition='inside', textinfo='percent+label')
     fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
 
 
