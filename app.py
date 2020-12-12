@@ -73,7 +73,7 @@ app.layout = html.Div([
         
         html.Div([
        dcc.Graph(id='graph_4'),
-    ],style={'display': 'inline-block', 'width': '50%'})
+    ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
           dcc.Graph(id='graph_5'),
