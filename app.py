@@ -79,7 +79,7 @@ app.layout = html.Div([
        dcc.Graph(id='graph_5'),
     ],style={'display': 'inline-block', 'width': '50%'}),
 
-], style={'background-color':'SteelBlue','color' : 'SteelBlue'})
+], style={'background-color':'SteelBlue','color' : 'DarkOrange'})
 
 
 @app.callback(
