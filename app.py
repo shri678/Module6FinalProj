@@ -31,7 +31,7 @@ app.layout = html.Div([
     html.Div([
               html.Img("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
-    ],style={'background-color':'Blue', 'text-align':'center', 'color' : 'DarkOrange'}),
+    ],style={'background-color':'SteelBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
     
 
     html.H3('Indian Premier League Statistics'),
@@ -79,7 +79,7 @@ app.layout = html.Div([
        dcc.Graph(id='graph_5'),
     ],style={'display': 'inline-block', 'width': '50%'}),
 
-], style={'background-color':'SteelBlue','color' : 'Gold'})
+], style={'background-color':'SteelBlue','color' : 'SteelBlue'})
 
 
 @app.callback(
