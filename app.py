@@ -115,7 +115,7 @@ def multi_output(IPLStat):
     fig3.update_layout(title_x = .5)
   
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
-    fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5, y_axis = 'Number of batsman in top 100')
+    fig4.update_layout(title =  'One Day International Rankings for Batsman ',xaxis_title = .5, yaxis_title = 'Number of batsman in top 100')
 
 
 
