@@ -37,9 +37,14 @@ app.layout = html.Div([
     #html.H3('Indian Premier League Statistics'),
     html.Details([
         html.Summary('Indian Premier League Statistics'),
-        html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
 
-        html.P("Select Metric for graph"),
+        html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
+        html.Br,
+        
+        html.Div([
+                  html.P("Select Metric for graph"),
+        ],style={'display': 'inline', 'width': '5%'}),
+       
         html.Div([
           dcc.Dropdown(
             id='IPLStat', clearable=False,
@@ -127,7 +132,10 @@ def multi_output(IPLStat):
     df_bowlers_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
     df_bowlers_top20.replace({'RATING': 'Current Rating'}, inplace=True)
 
-    fig5 = px.line(df_bowlers_top20, x="Name", y="Rating value", title='Points of Bowlers in top 20', color = 'Rating type')
+    fig5 = px.line(df_bowlers_top20, x="Name", y="Rating value", title='Rating Comparison of Top 20 Bowlers (Highest vs Present)', color = 'Rating type')
+    fig5.update_layout(
+        title_x = .5
+    )
     
 
 
