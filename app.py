@@ -39,7 +39,7 @@ app.layout = html.Div([
         html.Summary('Indian Premier League Statistics'),
 
         html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
-        html.Br,
+        
         html.P("Select Metric for graph"),
        
         html.Div([
