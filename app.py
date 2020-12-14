@@ -62,7 +62,7 @@ app.layout = html.Div([
         ],style={'display': 'inline-block', 'width': '50%'}),
         
         
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'DarkOrange'}),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'Black'}),
         
         
         #html.H3("One Day International Statistics"),
@@ -80,7 +80,7 @@ app.layout = html.Div([
             dcc.Graph(id='graph_5'),
           ],style={'display': 'inline-block', 'width': '50%'}),
   
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'Black'}),
       
 ], style={'background-color':'DeepSkyBlue','color' : 'DarkOrange'})
 
