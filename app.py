@@ -40,10 +40,7 @@ app.layout = html.Div([
 
         html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
         html.Br,
-        
-        html.Div([
-                  html.P("Select Metric for graph"),
-        ],style={'display': 'inline', 'width': '5%'}),
+        html.P("Select Metric for graph"),
        
         html.Div([
           dcc.Dropdown(
