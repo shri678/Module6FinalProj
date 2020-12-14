@@ -29,14 +29,14 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-              html.Img("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
+              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
     ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
     
 
     #html.H3('Indian Premier League Statistics'),
     # https://www.britannica.com/topic/Indian-Premier-League
-    
+
     html.Details([
         html.Summary('Indian Premier League Statistics'),
 
