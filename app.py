@@ -29,7 +29,7 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png", height = 50, width = 10%),
+              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png", style={'height':'20%', 'width':'10%'})),
     ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
     
     html.Div([
@@ -61,7 +61,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'inline', 'width': '5%'}),
+          ],style={'display': 'block', 'width': '5%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
