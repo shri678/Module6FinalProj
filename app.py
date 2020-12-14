@@ -51,7 +51,7 @@ app.layout = html.Div([
         
         html.Div([
         dcc.Graph(id='graph'), 
-          ],style={'display': 'inline-block', 'width': '50%', 'bgcolor': 'gray'}),
+          ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
           dcc.Graph(id='graph_2'),    
@@ -62,26 +62,27 @@ app.layout = html.Div([
         ],style={'display': 'inline-block', 'width': '50%'}),
         
         
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'DarkOrange'}),
         
         
-        html.H3("One Day International Statistics"),
+        #html.H3("One Day International Statistics"),
        
 
         html.Details([
-        html.Summary('Background'),
+        html.Summary('One Day International Statistics'),
         html.P('ODI is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50, with the game lasting up to 8 hours.'),
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
-        
-        html.Div([
-       dcc.Graph(id='graph_4'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
-        
-        html.Div([
-       dcc.Graph(id='graph_5'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
 
-], style={'background-color':'SteelBlue','color' : 'DarkOrange'})
+        html.Div([
+            dcc.Graph(id='graph_4'),
+          ],style={'display': 'inline-block', 'width': '50%'}),
+        
+        html.Div([
+            dcc.Graph(id='graph_5'),
+          ],style={'display': 'inline-block', 'width': '50%'}),
+  
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
+      
+], style={'background-color':'DeepSkyBlue','color' : 'DarkOrange'})
 
 
 @app.callback(
