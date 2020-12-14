@@ -31,36 +31,38 @@ app.layout = html.Div([
     html.Div([
               html.Img("https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png"),
               html.H1("Cricket Statistics"),
-    ],style={'background-color':'SteelBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
+    ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
     
 
-    html.H3('Indian Premier League Statistics'),
+    #html.H3('Indian Premier League Statistics'),
     html.Details([
-        html.Summary('Background'),
+        html.Summary('Indian Premier League Statistics'),
         html.P('The Indian Premier League (IPL) is a professional Twenty20 cricket league in India usually contested between March and May of every year by eight teams representing eight different cities or states in India.'),
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
+
         html.P("Select Metric for graph"),
         html.Div([
-        dcc.Dropdown(
+          dcc.Dropdown(
             id='IPLStat', clearable=False,
             value='Total Matches Played', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-    ],style={'display': 'inline', 'width': '5%'}),
+          ],style={'display': 'inline', 'width': '5%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
-    ],style={'display': 'inline-block', 'width': '50%', 'bgcolor': 'gray'}),
+          ],style={'display': 'inline-block', 'width': '50%', 'bgcolor': 'gray'}),
         
         html.Div([
-       dcc.Graph(id='graph_2'),
-        
-    ],style={'display': 'inline-block', 'width': '50%'}),
+          dcc.Graph(id='graph_2'),    
+        ],style={'display': 'inline-block', 'width': '50%'}),
         
         html.Div([
-       dcc.Graph(id='graph_3'),
-    ],style={'display': 'inline-block', 'width': '50%'}),
+          dcc.Graph(id='graph_3'),
+        ],style={'display': 'inline-block', 'width': '50%'}),
+        
+        
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'grey', 'color': 'white'}),
         
         
         html.H3("One Day International Statistics"),
@@ -96,7 +98,7 @@ app.layout = html.Div([
 def multi_output(IPLStat):
 
   
-    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.1)
+    fig1 = px.pie(df3, values= IPLStat, names=df3.index, title=IPLStat, hole = 0.4)
 
     #fig1.update_traces(textinfo='percent+label')
     #fig1.update_layout(title_x = .5, legend=dict(orientation="h",yanchor="bottom",y=-0.7,xanchor="left",x=0))
