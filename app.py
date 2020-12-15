@@ -40,7 +40,7 @@ app.layout = html.Div([
     # https://www.britannica.com/topic/Indian-Premier-League
 
     html.Details([
-        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'White'}),
+        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'White', 'text-indent': '0%', 'font-size': '80%'}),
 
         html.P('Indian Premier League (IPL), Indian professional Twenty20 (T20) cricket league established in 2008. The league, which is based on a round-robin group and knockout format, has teams in major Indian cities. Matches generally begin in late afternoon or evening so that at least a portion of them are played under floodlights at night to maximize the television audience for worldwide broadcasts. The top four teams contest three play-off matches, with one losing team being given a second chance to reach the final, a wrinkle aimed at maximizing potential television revenue. The play-off portion of the tournament involves the four teams that finished at the top of the tables in a series of knockout games that allows one team that lost its first-round game a second chance to advance to the final match'),
 
@@ -54,7 +54,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'inline-block', 'width': '20%', 'color': 'black'}),
+          ],style={'display': 'inline', 'width': '20%', 'color': 'black'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
