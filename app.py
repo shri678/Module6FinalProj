@@ -48,7 +48,7 @@ app.layout = html.Div([
         html.P('With the advent of the IPL, almost overnight the world’s best cricketers—who had seldom made the kind of money earned by their counterparts in other professional sports—became millionaires. The owners of the IPL franchises, who included major companies, Bollywood film stars, and media moguls, bid for the best players in auctions organized by the league. The eight founding franchises were the Mumbai Indians, the Chennai Super Kings, the Royal Challengers Bangalore, the Deccan Chargers (based in Hyderabad), the Delhi Daredevils, the Punjab XI Kings (Mohali), the Kolkata Knight Riders, and the Rajasthan Royals (Jaipur). In late 2010 two franchises, Rajasthan and Punjab, were expelled from the league by the BCCI for breeches of ownership policy, but they were later reinstated in time for the 2011 tournament. Two new franchises, the Pune Warriors India and the Kochi Tuskers Kerala, joined the IPL for the 2011 tournament. The Kochi club played just one year before the BCCI terminated its contract. In 2013 the Deccan Chargers were replaced in the IPL by the Sunrisers Hyderabad.'),
   
         html.Div([
-          html.H6("Select Metric for graph ", style={'display':'inline', 'text-indent': '2%', 'color':'white'}),
+          html.H6("Select Metric for graph ", style={'display':'inline', 'text-indent': '2%', 'color':'Black', 'background-color':'White'}),
           dcc.Dropdown(
             id='IPLStat', clearable=False,
             value='Total Matches Played', options=[
