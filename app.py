@@ -145,7 +145,7 @@ def multi_output(IPLStat):
     )
     
     fig6 = px.bar(bowlscount, x=bowlscount['Country'], y=bowlscount['Number of players in top 100'])
-    fig4.update_layout(title =  'One Day International Rankings for Bowlers ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
+    fig6.update_layout(title =  'One Day International Rankings for Bowlers ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
 
     return fig1, fig2, fig3, fig4, fig5, fig6
 
