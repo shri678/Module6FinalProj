@@ -53,10 +53,9 @@ app.layout = html.Div([
             value='Total Matches Played', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
-            ], multi = False),
-          style={'display': 'inline', 'width': '20%', 'color': 'black', 'text-indent': '0%'},
+            ], multi = False)
           html.P(' '),
-        ]),
+        ],style={'display': 'inline', 'width': '60%', 'color': 'black', 'text-indent': '0%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
