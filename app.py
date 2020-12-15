@@ -99,10 +99,12 @@ app.layout = html.Div([
 
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'White', 'text-indent': '5%'}),
 
-    html.H6('Data Sources:'),
-    html.P('IPL Data: https://www.kaggle.com/nowke9/ipldata'),
-    html.P('One Day International data for batsmen and bowlers: https://www.icc-cricket.com/rankings/mens/overview'),
 
+    html.Details([
+      html.Summary('Data Sources:',style={'color' : 'White', 'text-indent': '0%', 'font-size': '120%'}),
+      dcc.Link('IPL Data', href='https://www.kaggle.com/nowke9/ipldata'),
+      dcc.Link('One Day International data for batsmen and bowlers', href = 'https://www.icc-cricket.com/rankings/mens/overview')
+    ]style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
 
 
@@ -159,7 +161,7 @@ def multi_output(IPLStat):
 
     df_batsman_top20 = df_batsman.query('POS < 21')
     df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'POS'], inplace=True, axis= 1)
-    df_batsmen_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
+    df_batsmen_top20 = df_batsman_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
     df_batsmen_top20.replace({'RATING': 'Current Rating'}, inplace=True)
 
     fig7 = px.line(df_batsmen_top20, x="Name", y="Rating value", title='Rating Comparison of Top 20 Batsmen (Highest vs Present)', color = 'Rating type')
