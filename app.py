@@ -92,6 +92,11 @@ app.layout = html.Div([
             dcc.Graph(id='graph_6'),
           ],style={'display': 'inline-block', 'width': '50%'}),
 
+        html.Div([
+            dcc.Graph(id='graph_7'),
+          ],style={'display': 'inline-block', 'width': '50%'}),
+
+
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'Black'}),
       
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
@@ -100,8 +105,8 @@ app.layout = html.Div([
 @app.callback(
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),
      dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure'),
-     dash.dependencies.Output('graph_5', 'figure'), dash.dependencies.Output('graph_6', 'figure')
-     
+     dash.dependencies.Output('graph_5', 'figure'), dash.dependencies.Output('graph_6', 'figure'),
+     dash.dependencies.Output('graph_7', 'figure')
      ],
 
     [dash.dependencies.Input("IPLStat", "value")]
@@ -147,7 +152,18 @@ def multi_output(IPLStat):
     fig6 = px.bar(bowlscount, x=bowlscount['Country'], y=bowlscount['Number of players in top 100'])
     fig6.update_layout(title =  'One Day International Rankings for Bowlers ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
 
-    return fig1, fig2, fig3, fig4, fig5, fig6
+
+    df_batsman_top20 = df_bowler.query('Pos < 21')
+    df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'Pos'], inplace=True, axis= 1)
+    df_batsmen_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
+    df_batsmen_top20.replace({'RATING': 'Current Rating'}, inplace=True)
+
+    fig7 = px.line(df_batsmen_top20, x="Name", y="Rating value", title='Rating Comparison of Top 20 Batsmen (Highest vs Present)', color = 'Rating type')
+    fig7.update_layout(
+        title_x = .5
+    )
+
+    return fig1, fig2, fig3, fig4, fig5, fig6, fig7
 
 if __name__ == '__main__':
     app.run_server()
