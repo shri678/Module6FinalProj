@@ -77,7 +77,7 @@ app.layout = html.Div([
 
         html.Details([
         html.Summary('One Day International'),
-        html.P('ODI is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50, with the game lasting up to 8 hours.'),
+        html.P('A One Day International (ODI) is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50 (used to be 60 overs until 1983), with the game lasting up to 8 hours. The Cricket World Cup, generally held every four years, is played in this format. One Day International matches are also called Limited Overs Internationals (LOI), although this generic term may also refer to Twenty20 International matches. They are major matches and considered the highest standard of List A, limited-overs competition.'),
 
         html.Div([
             dcc.Graph(id='graph_4'),
