@@ -157,8 +157,8 @@ def multi_output(IPLStat):
     fig6.update_layout(title =  'Number of Bowlers in Top 100 for each Nation ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
 
 
-    df_batsman_top20 = df_batsman.query('Pos < 21')
-    df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'Pos'], inplace=True, axis= 1)
+    df_batsman_top20 = df_batsman.query('POS < 21')
+    df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'POS'], inplace=True, axis= 1)
     df_batsmen_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
     df_batsmen_top20.replace({'RATING': 'Current Rating'}, inplace=True)
 
