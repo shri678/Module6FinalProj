@@ -30,7 +30,7 @@ server = app.server
 app.layout = html.Div([
     html.Div([
               html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png",style={'height':'10%', 'width':'10%', 'display': 'inline-block','text-align': 'left'}),
-              html.H1("Cricket Statistics",style={'height':'10%', 'width':'90%', 'display': 'inline-block', 'text-align': 'center'}),
+              html.H1("Cricket Statistics",style={'height':'10%', 'width':'90%', 'display': 'inline-block', 'text-align': 'center', 'vertical-align': 'middle'}),
             ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'ForestGreen'}),
     
 
@@ -40,7 +40,7 @@ app.layout = html.Div([
     # https://www.britannica.com/topic/Indian-Premier-League
 
     html.Details([
-        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'ForestGreen'}),
+        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'ForestGreen', 'margin-left': '20px'}),
 
         html.P('Indian Premier League (IPL), Indian professional Twenty20 (T20) cricket league established in 2008. The league, which is based on a round-robin group and knockout format, has teams in major Indian cities.'),
         html.P('Matches generally begin in late afternoon or evening so that at least a portion of them are played under floodlights at night to maximize the television audience for worldwide broadcasts'),
@@ -53,14 +53,14 @@ app.layout = html.Div([
 
   
         html.Div([
-          html.P("Select Metric for graph", style={'background-color':'White', 'font-weight':'bold'}),
+          html.P("Select Metric for graph", style={'background-color':'White', 'font-weight':'bold', 'display': 'inline-block'}),
           dcc.Dropdown(
             id='IPLStat', clearable=False,
             value='Total Matches Played', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'block', 'width': '20%'}),
+          ],style={'display': 'inline-block', 'width': '20%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
@@ -75,7 +75,7 @@ app.layout = html.Div([
         ],style={'display': 'inline-block', 'width': '50%'}),
         
         
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'Black'}),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'Black', 'margin-left': '40px'}),
         
         
         #html.H3("One Day International Statistics"),
