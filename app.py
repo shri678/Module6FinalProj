@@ -40,7 +40,7 @@ app.layout = html.Div([
     # https://www.britannica.com/topic/Indian-Premier-League
 
     html.Details([
-        html.Summary('Indian Premier League Statistics'),
+        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'DarkOrange'})
 
         html.P('Indian Premier League (IPL), Indian professional Twenty20 (T20) cricket league established in 2008. The league, which is based on a round-robin group and knockout format, has teams in major Indian cities.'),
         html.P('Matches generally begin in late afternoon or evening so that at least a portion of them are played under floodlights at night to maximize the television audience for worldwide broadcasts'),
@@ -51,8 +51,7 @@ app.layout = html.Div([
         html.P('The eight founding franchises were the Mumbai Indians, the Chennai Super Kings, the Royal Challengers Bangalore, the Deccan Chargers (based in Hyderabad), the Delhi Daredevils, the Punjab XI Kings (Mohali), the Kolkata Knight Riders, and the Rajasthan Royals (Jaipur). In late 2010 two franchises, Rajasthan and Punjab, were expelled from the league by the BCCI for breeches of ownership policy, but they were later reinstated in time for the 2011 tournament. Two new franchises, the Pune Warriors India and the Kochi Tuskers Kerala, joined the IPL for the 2011 tournament. The Kochi club played just one year before the BCCI terminated its contract. In 2013 the Deccan Chargers were replaced in the IPL by the Sunrisers Hyderabad.'),
 
 
-        html.P("Select Metric for graph"),
-       
+  
         html.Div([
           html.P("Select Metric for graph"),
           dcc.Dropdown(
