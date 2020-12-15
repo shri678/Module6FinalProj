@@ -53,7 +53,7 @@ app.layout = html.Div([
             value='Total Matches Played', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
-            ], multi = False)
+            ], multi = False),
           html.P(' '),
         ],style={'display': 'inline', 'width': '60%', 'color': 'black', 'text-indent': '0%'}),
         
