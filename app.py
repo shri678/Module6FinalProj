@@ -29,8 +29,8 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png",style={'height':'10%', 'width':'10%'}),
-              html.H1("Cricket Statistics"),
+              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png",style={'height':'10%', 'width':'10%', 'display': 'inline-block','text-align': 'left'}),
+              html.H1("Cricket Statistics",style={'height':'10%', 'width':'90%', 'display': 'inline-block', 'text-align': 'center'}),
             ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'DarkOrange'}),
     
 
@@ -40,7 +40,7 @@ app.layout = html.Div([
     # https://www.britannica.com/topic/Indian-Premier-League
 
     html.Details([
-        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'DarkOrange'})
+        html.Summary('Indian Premier League Statistics',style={'background-color':'DeepSkyBlue','color' : 'DarkOrange'}),
 
         html.P('Indian Premier League (IPL), Indian professional Twenty20 (T20) cricket league established in 2008. The league, which is based on a round-robin group and knockout format, has teams in major Indian cities.'),
         html.P('Matches generally begin in late afternoon or evening so that at least a portion of them are played under floodlights at night to maximize the television audience for worldwide broadcasts'),
