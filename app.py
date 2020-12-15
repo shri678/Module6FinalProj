@@ -69,7 +69,8 @@ app.layout = html.Div([
           dcc.Graph(id='graph_3'),
         ],style={'display': 'inline-block', 'width': '50%'}),
         
-        
+        open("The Ipl Datacet I received", "w").write('<a href="https://www.kaggle.com/nowke9/ipldata"> Link </a>')
+
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
         
         
