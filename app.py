@@ -103,6 +103,7 @@ app.layout = html.Div([
     html.Details([
       html.Summary('Data Sources:',style={'color' : 'White', 'text-indent': '0%', 'font-size': '120%'}),
       dcc.Link('IPL Data', href='https://www.kaggle.com/nowke9/ipldata'),
+      html.Br(),
       dcc.Link('One Day International data for batsmen and bowlers', href = 'https://www.icc-cricket.com/rankings/mens/overview')
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
