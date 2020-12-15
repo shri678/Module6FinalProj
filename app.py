@@ -54,7 +54,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'inline', 'width': '25%', 'color': 'black'}),
+          ],style={'display': 'inline', 'width': '25%', 'color': 'black', 'text-indent': '0%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
@@ -72,11 +72,11 @@ app.layout = html.Div([
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
         
         
-        #html.H3("One Day International Statistics"),
+       
        
 
         html.Details([
-        html.Summary('One Day International Statistics'),
+        html.Summary('One Day International'),
         html.P('ODI is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50, with the game lasting up to 8 hours.'),
 
         html.Div([
