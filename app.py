@@ -69,9 +69,9 @@ app.layout = html.Div([
           dcc.Graph(id='graph_3'),
         ],style={'display': 'inline-block', 'width': '50%'}),
         
-        html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata')
-        html.P('My One Day International data for batsmen and bowlers Data: https://www.icc-cricket.com/rankings/mens/overview')
-        html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata')
+        html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata'),
+        html.P('My One Day International data for batsmen and bowlers Data: https://www.icc-cricket.com/rankings/mens/overview'),
+        html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata'),
 
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
         
