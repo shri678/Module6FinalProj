@@ -76,7 +76,8 @@ app.layout = html.Div([
        
 
         html.Details([
-        html.Summary('One Day International'),
+        html.Summary('One Day International',style={'color' : 'White', 'text-indent': '0%', 'font-size': '120%'}),
+
         html.P('A One Day International (ODI) is a form of limited overs cricket, played between two teams with international status, in which each team faces a fixed number of overs, currently 50 (used to be 60 overs until 1983), with the game lasting up to 8 hours. The Cricket World Cup, generally held every four years, is played in this format. One Day International matches are also called Limited Overs Internationals (LOI), although this generic term may also refer to Twenty20 International matches. They are major matches and considered the highest standard of List A, limited-overs competition.'),
 
         html.Div([
@@ -96,11 +97,11 @@ app.layout = html.Div([
           ],style={'display': 'inline-block', 'width': '50%'}),
 
 
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'Black'}),
-      
-    html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata'),
-    html.P('My One Day International data for batsmen and bowlers Data: https://www.icc-cricket.com/rankings/mens/overview'),
-    html.P('My IPL Data: https://www.kaggle.com/nowke9/ipldata'),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'White', 'text-indent': '5%'}),
+
+    html.H6('Data Sources:') 
+    html.P('IPL Data: https://www.kaggle.com/nowke9/ipldata'),
+    html.P('One Day International data for batsmen and bowlers: https://www.icc-cricket.com/rankings/mens/overview'),
 
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
 
@@ -108,8 +109,8 @@ app.layout = html.Div([
 @app.callback(
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),
      dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure'),
-     dash.dependencies.Output('graph_5', 'figure'), dash.dependencies.Output('graph_6', 'figure'),
-     dash.dependencies.Output('graph_7', 'figure')
+     dash.dependencies.Output('graph_7', 'figure'), dash.dependencies.Output('graph_6', 'figure'),
+     dash.dependencies.Output('graph_5', 'figure')
      ],
 
     [dash.dependencies.Input("IPLStat", "value")]
@@ -138,7 +139,7 @@ def multi_output(IPLStat):
     fig3.update_layout(title_x = .5)
   
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
-    fig4.update_layout(title =  'One Day International Rankings for Batsmen ',title_x = .5, yaxis_title = 'Number of batsmen in top 100')
+    fig4.update_layout(title =  'Number of Batsmen in Top 100 for each Nation ',title_x = .5, yaxis_title = 'Number of batsmen in top 100')
 
 
 
@@ -153,10 +154,10 @@ def multi_output(IPLStat):
     )
     
     fig6 = px.bar(bowlscount, x=bowlscount['Country'], y=bowlscount['Number of players in top 100'])
-    fig6.update_layout(title =  'One Day International Rankings for Bowlers ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
+    fig6.update_layout(title =  'Number of Bowlers in Top 100 for each Nation ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
 
 
-    df_batsman_top20 = df_bowler.query('Pos < 21')
+    df_batsman_top20 = df_batsman.query('Pos < 21')
     df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'Pos'], inplace=True, axis= 1)
     df_batsmen_top20 = df_bowler_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
     df_batsmen_top20.replace({'RATING': 'Current Rating'}, inplace=True)
