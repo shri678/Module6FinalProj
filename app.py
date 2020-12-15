@@ -105,7 +105,7 @@ app.layout = html.Div([
       dcc.Link('IPL Data', href='https://www.kaggle.com/nowke9/ipldata'),
       html.Br(),
       dcc.Link('One Day International data for batsmen and bowlers', href = 'https://www.icc-cricket.com/rankings/mens/overview')
-    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
+    ],style={'display': 'inline-block', 'width': '100%', 'background-color':'White', 'color': 'Black'}),
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
 
 
