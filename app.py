@@ -15,6 +15,7 @@ df_bowler = pd.read_csv(urlbowler)
 df_batsman = pd.read_csv(urlbatsman)
 
 batscount = df_batsman.TEAM.value_counts().reset_index().rename(columns = {'index': 'Country', 'TEAM': 'Number of players in top 100'})
+bowlscount = df_bowler.TEAM.value_counts().reset_index().rename(columns = {'index': 'Country', 'TEAM': 'Number of players in top 100'})
 
 
 df3 = df3.set_index('teams')
@@ -54,7 +55,6 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          html.P(' '),
         ],style={'display': 'inline', 'width': '60%', 'color': 'black', 'text-indent': '0%'}),
         
         html.Div([
@@ -87,7 +87,11 @@ app.layout = html.Div([
         html.Div([
             dcc.Graph(id='graph_5'),
           ],style={'display': 'inline-block', 'width': '50%'}),
-  
+        
+        html.Div([
+            dcc.Graph(id='graph_6'),
+          ],style={'display': 'inline-block', 'width': '50%'}),
+
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'Black'}),
       
 ], style={'background-color':'DeepSkyBlue','color' : 'white','margin-left':'1%'})
@@ -96,7 +100,7 @@ app.layout = html.Div([
 @app.callback(
     [dash.dependencies.Output('graph', 'figure'),dash.dependencies.Output('graph_2', 'figure'),
      dash.dependencies.Output('graph_3', 'figure'), dash.dependencies.Output('graph_4', 'figure'),
-     dash.dependencies.Output('graph_5', 'figure')
+     dash.dependencies.Output('graph_5', 'figure'), dash.dependencies.Output('graph_6', 'figure')
      
      ],
 
@@ -126,7 +130,7 @@ def multi_output(IPLStat):
     fig3.update_layout(title_x = .5)
   
     fig4 = px.bar(batscount, x=batscount['Country'], y=batscount['Number of players in top 100'])
-    fig4.update_layout(title =  'One Day International Rankings for Batsman ',title_x = .5, yaxis_title = 'Number of batsman in top 100')
+    fig4.update_layout(title =  'One Day International Rankings for Batsmen ',title_x = .5, yaxis_title = 'Number of batsmen in top 100')
 
 
 
@@ -140,9 +144,10 @@ def multi_output(IPLStat):
         title_x = .5
     )
     
+    fig6 = px.bar(bowlscount, x=bowlscount['Country'], y=bowlscount['Number of players in top 100'])
+    fig4.update_layout(title =  'One Day International Rankings for Bowlers ',title_x = .5, yaxis_title = 'Number of bowlers in top 100')
 
-
-    return fig1, fig2, fig3, fig4, fig5
+    return fig1, fig2, fig3, fig4, fig5, fig6
 
 if __name__ == '__main__':
     app.run_server()
