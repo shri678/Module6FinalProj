@@ -54,6 +54,7 @@ app.layout = html.Div([
         html.P("Select Metric for graph"),
        
         html.Div([
+          html.P("Select Metric for graph"),
           dcc.Dropdown(
             id='IPLStat', clearable=False,
             value='Total Matches Played', options=[
