@@ -99,7 +99,7 @@ app.layout = html.Div([
 
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'SkyBlue', 'color': 'White', 'text-indent': '5%'}),
 
-    html.H6('Data Sources:') 
+    html.H6('Data Sources:'),
     html.P('IPL Data: https://www.kaggle.com/nowke9/ipldata'),
     html.P('One Day International data for batsmen and bowlers: https://www.icc-cricket.com/rankings/mens/overview'),
 
