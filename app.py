@@ -67,7 +67,7 @@ app.layout = html.Div([
         
         html.Div([
           dcc.Graph(id='graph_3'),
-        ],style={'display': 'inline-block', 'width': '50%'}),
+        ],style={'display': 'inline-block', 'width': '100%'}),
         
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
         
@@ -137,7 +137,7 @@ def multi_output(IPLStat):
     max_y = df3['Win by Runs'].max()-20
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'Matches won',
-                color = df3.index, hover_name = df3.index, size_max = 60, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
+                color = df3.index, hover_name = df3.index, size_max = 100, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
                  range_x = [0,max_x], range_y = [0,max_y])
     fig3.update_layout(title_x = .5)
   
