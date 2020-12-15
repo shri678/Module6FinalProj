@@ -161,10 +161,10 @@ def multi_output(IPLStat):
 
     df_batsman_top20 = df_batsman.query('POS < 21')
     df_batsman_top20.drop(columns = ['TEAM', 'Team against', 'Date', 'POS'], inplace=True, axis= 1)
-    df_batsmen_top20 = df_batsman_top20.melt(['Name'], var_name='Rating type', value_name='Rating value')
+    df_batsmen_top20 = df_batsman_top20.melt(['PLAYER'], var_name='Rating type', value_name='Rating value')
     df_batsmen_top20.replace({'RATING': 'Current Rating'}, inplace=True)
 
-    fig7 = px.line(df_batsmen_top20, x="Name", y="Rating value", title='Rating Comparison of Top 20 Batsmen (Highest vs Present)', color = 'Rating type')
+    fig7 = px.line(df_batsmen_top20, x="PLAYER", y="Rating value", title='Rating Comparison of Top 20 Batsmen (Highest vs Present)', color = 'Rating type')
     fig7.update_layout(
         title_x = .5
     )
