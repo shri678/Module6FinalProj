@@ -54,7 +54,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ,style={'display': 'inline', 'width': '20%', 'color': 'black', 'text-indent': '0%'},
+          style={'display': 'inline', 'width': '20%', 'color': 'black', 'text-indent': '0%'},
           html.P(' '),
         ]),
         
