@@ -101,7 +101,7 @@ app.layout = html.Div([
 
 
     html.Details([
-      html.Summary('Data Sources:',style={'color' : 'White', 'text-indent': '0%', 'font-size': '120%'}),
+      html.Summary('Data Sources:',style={'color' : 'Black', 'text-indent': '0%', 'font-size': '120%'}),
       dcc.Link('IPL Data', href='https://www.kaggle.com/nowke9/ipldata'),
       html.Br(),
       dcc.Link('One Day International data for batsmen and bowlers', href = 'https://www.icc-cricket.com/rankings/mens/overview')
@@ -134,7 +134,7 @@ def multi_output(IPLStat):
     fig2.update_layout(title = IPLStat + " by every IPL team",title_x = .5, xaxis_title ='IPL Teams', yaxis_title=IPLStat)
     
     max_x = df3['Win by Wickets'].max()+20
-    max_y = df3['Win by Runs'].max()-20
+    max_y = df3['Win by Runs'].max()+20
 
     fig3 = px.scatter(df3, x = 'Win by Wickets', y = 'Win by Runs', size = 'Matches won',
                 color = df3.index, hover_name = df3.index, size_max = 100, title = 'Total Wins by Runs vs Wins by Wickets of all IPL teams',
