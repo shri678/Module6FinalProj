@@ -67,7 +67,7 @@ app.layout = html.Div([
         
         html.Div([
           dcc.Graph(id='graph_3'),
-        ],style={'display': 'inline-block', 'width': '100%'}),
+        ],style={'display': 'inline-block', 'width': '80%'}),
         
     ],style={'display': 'inline-block', 'width': '100%', 'background-color':'DeepSkyBlue', 'color': 'White', 'text-indent': '5%'}),
         
@@ -101,7 +101,7 @@ app.layout = html.Div([
 
 
     html.Details([
-      html.Summary('Data Sources:',style={'color' : 'Black', 'text-indent': '0%', 'font-size': '120%'}),
+      html.Summary('Data Sources',style={'color' : 'Black', 'text-indent': '0%', 'font-size': '120%'}),
       dcc.Link('IPL Data', href='https://www.kaggle.com/nowke9/ipldata'),
       html.Br(),
       dcc.Link('One Day International data for batsmen and bowlers', href = 'https://www.icc-cricket.com/rankings/mens/overview')
