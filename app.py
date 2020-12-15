@@ -29,7 +29,7 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png",style={'height':'8%', 'width':'5%', 'display': 'inline-block','text-align': 'left'}),
+              html.Img(src = "https://raw.githubusercontent.com/shri678/DataViz1/master/Daco_4377152.png",style={'height':'10%', 'width':'5%', 'display': 'inline-block','text-align': 'left'}),
               html.H1("Cricket Statistics",style={'height':'5%', 'width':'95%', 'display': 'inline-block', 'text-align': 'center', 'vertical-align': 'middle'}),
             ],style={'background-color':'DodgerBlue', 'text-align':'center', 'color' : 'White'}),
     
@@ -47,14 +47,14 @@ app.layout = html.Div([
         html.P('With the advent of the IPL, almost overnight the world’s best cricketers—who had seldom made the kind of money earned by their counterparts in other professional sports—became millionaires. The owners of the IPL franchises, who included major companies, Bollywood film stars, and media moguls, bid for the best players in auctions organized by the league. The eight founding franchises were the Mumbai Indians, the Chennai Super Kings, the Royal Challengers Bangalore, the Deccan Chargers (based in Hyderabad), the Delhi Daredevils, the Punjab XI Kings (Mohali), the Kolkata Knight Riders, and the Rajasthan Royals (Jaipur). In late 2010 two franchises, Rajasthan and Punjab, were expelled from the league by the BCCI for breeches of ownership policy, but they were later reinstated in time for the 2011 tournament. Two new franchises, the Pune Warriors India and the Kochi Tuskers Kerala, joined the IPL for the 2011 tournament. The Kochi club played just one year before the BCCI terminated its contract. In 2013 the Deccan Chargers were replaced in the IPL by the Sunrisers Hyderabad.'),
   
         html.Div([
-          html.H6("Select Metric for graph ", style={'display':'inline', 'text-indent': '2%'}),
+          html.H6("Select Metric for graph ", style={'display':'inline', 'text-indent': '2%', 'color':'white'}),
           dcc.Dropdown(
             id='IPLStat', clearable=False,
             value='Total Matches Played', options=[
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'inline', 'width': '25%', 'color': 'black', 'text-indent': '0%'}),
+          ],style={'display': 'inline-block', 'width': '20%', 'color': 'black', 'text-indent': '0%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
