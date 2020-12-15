@@ -60,7 +60,7 @@ app.layout = html.Div([
                 {'label': c, 'value': c}
                 for c in df3.columns
             ], multi = False),
-          ],style={'display': 'block', 'width': '5%'}),
+          ],style={'display': 'block', 'width': '20%'}),
         
         html.Div([
         dcc.Graph(id='graph'), 
